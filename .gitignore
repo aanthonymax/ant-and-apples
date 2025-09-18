@@ -5,5 +5,3 @@
 .cache
 .dist
 dist
-.eslintcache
-package-lock.json
