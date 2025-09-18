@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
       allApplesCollected = true;
       freezeAnt = true;
       setTimeout(() => {
-        alert("Congratulations! All apples collected!");
+        alert("Congratulations! All the apples are eaten!");
         window.location.reload();
       }, 100);
     }
