@@ -1,0 +1,9 @@
+/node_modules
+*.log
+.idea
+.vscode
+.cache
+.dist
+dist
+.eslintcache
+package-lock.json
