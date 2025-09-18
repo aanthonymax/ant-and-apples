@@ -1,7 +1,7 @@
 {
-  "name": "gallery-app",
+  "name": "ant-game",
   "version": "1.0.0",
-  "description": "Example application on HMPL",
+  "description": "2D Ant Game with HMPL.js",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
@@ -12,7 +12,10 @@
     "url": "git+https://github.com/hmpl-language/examples.git"
   },
   "keywords": [
-    "gallery app"
+    "ant game",
+    "2d game",
+    "hmpl",
+    "javascript game"
   ],
   "bugs": {
     "url": "https://github.com/hmpl-language/examples/issues"

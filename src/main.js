@@ -219,6 +219,84 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(gameLoop);
   }
 
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+  if (isMobile) {
+    const controlsDiv = document.createElement("div");
+    controlsDiv.style.position = "absolute";
+    controlsDiv.style.bottom = "20px";
+    controlsDiv.style.left = "50%";
+    controlsDiv.style.transform = "translateX(-50%)";
+    controlsDiv.style.display = "flex";
+    controlsDiv.style.gap = "20px";
+    controlsDiv.style.zIndex = "1000";
+
+    const leftBtn = document.createElement("button");
+    leftBtn.textContent = "←";
+    leftBtn.style.padding = "15px 20px";
+    leftBtn.style.fontSize = "20px";
+    leftBtn.style.border = "none";
+    leftBtn.style.borderRadius = "10px";
+    leftBtn.style.backgroundColor = "#3498db";
+    leftBtn.style.color = "white";
+    leftBtn.style.cursor = "pointer";
+
+    const rightBtn = document.createElement("button");
+    rightBtn.textContent = "→";
+    rightBtn.style.padding = "15px 20px";
+    rightBtn.style.fontSize = "20px";
+    rightBtn.style.border = "none";
+    rightBtn.style.borderRadius = "10px";
+    rightBtn.style.backgroundColor = "#3498db";
+    rightBtn.style.color = "white";
+    rightBtn.style.cursor = "pointer";
+
+    const jumpBtn = document.createElement("button");
+    jumpBtn.textContent = "↑";
+    jumpBtn.style.padding = "15px 20px";
+    jumpBtn.style.fontSize = "20px";
+    jumpBtn.style.border = "none";
+    jumpBtn.style.borderRadius = "10px";
+    jumpBtn.style.backgroundColor = "#3498db";
+    jumpBtn.style.color = "white";
+    jumpBtn.style.cursor = "pointer";
+
+    controlsDiv.appendChild(leftBtn);
+    controlsDiv.appendChild(jumpBtn);
+    controlsDiv.appendChild(rightBtn);
+    document.body.appendChild(controlsDiv);
+
+    leftBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      leftPressed = true;
+    });
+    leftBtn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      leftPressed = false;
+    });
+
+    rightBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      rightPressed = true;
+    });
+    rightBtn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      rightPressed = false;
+    });
+
+    jumpBtn.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      if (ant.onGround) jumpPressed = true;
+    });
+    jumpBtn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      jumpPressed = false;
+    });
+  }
+
   window.addEventListener("keydown", (e) => {
     if (freezeAnt) return;
     if (e.key === "ArrowLeft") leftPressed = true;
