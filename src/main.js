@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadApples() {
     const applesTemplate = hmpl.compile(
-      `<div>{{#request src="/apples.html"}}{{/request}}</div>`
+      `<div>{{#request src="./apples.html"}}{{/request}}</div>`
     );
     const response = await new Promise((res, rej) => {
       applesTemplate({
