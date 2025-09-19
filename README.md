@@ -1,6 +1,6 @@
 # A game about an ant and apples
 
-I had nothing to do, so out of boredom I made a small game in a couple of days just for fun :)
+I had nothing to do, so out of boredom I made a small game partially using [hmpl-js](https://github.com/hmpl-language/hmpl) in a couple of days just for fun :)
 
 ## Gameplay
 
