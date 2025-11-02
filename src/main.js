@@ -1,10 +1,10 @@
 import "./index.scss";
-import "./sprites/ant.png";
+import antSrc from "./sprites/ant.png";
 import hmpl from "hmpl-js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const antImg = new window.Image();
-  antImg.src = "./sprites/ant.png";
+  antImg.src = antSrc;
   antImg.onerror = () => console.error("Failed to load ant.png:", antImg.src);
 
   const groundImg = new window.Image();
@@ -321,11 +321,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadApples() {
     const applesTemplate = hmpl.compile(
-      `<div>{{#request src="./apples.html"}}{{/request}}</div>`
+      `<div>{{#request src="/apples.html"}}{{/request}}</div>`
     );
     const response = await new Promise((res, rej) => {
       applesTemplate({
-        get: (prop, value, context, request) => {
+        get: ({ prop, value, context, request }) => {
           switch (prop) {
             case "response":
               if (!value) return;
