@@ -1,6 +1,0 @@
-{
-  "routes": [
-    { "src": "/apples.html", "dest": "/apples.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
